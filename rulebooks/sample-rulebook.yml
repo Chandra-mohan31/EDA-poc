@@ -8,8 +8,13 @@
         host: 0.0.0.0
         port: 5000
   rules:
+    # - name: Print a message when event occurs
+    #   condition: event.i == 0
+    #   action:
+    #     run_playbook:
+    #       name: sample-play.yml
     - name: Print a message when event occurs
-      condition: event.i == 0
+      condition: event.payload.message == "Ansible super"
       action:
         run_playbook:
-          name: print_message.yml
+          name: sample-play.yml
