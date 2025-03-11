@@ -9,10 +9,10 @@
     #     port: 5000
   rules:
     - name: Print a message when event occurs
-      condition: event.i == 0
+      condition: event.i == 1
       action:
-        run_playbook:
-          name: sample-play.yml
+        debug:
+          msg: 'hi from EDA'
     # - name: Print a message when event occurs
     #   condition: event.payload.message == "Ansible super"
     #   action:
