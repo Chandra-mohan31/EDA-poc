@@ -2,8 +2,11 @@
 - name: Simple Rulebook
   hosts: localhost
   sources:
-    - ansible.eda.range:
-        limit: 1
+    # - ansible.eda.range:
+    #     limit: 1
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5000
   rules:
     - name: Print a message when event occurs
       condition: event.i == 0
