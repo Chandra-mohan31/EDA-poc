@@ -1,0 +1,9 @@
+name: Any condition can match
+hosts: localhost
+condition:
+  any:
+    - event.target_os == "linux"
+    - event.target_os == "windows"
+action:
+  debug:
+    msg: 'the target os is linux or windows'
