@@ -1,9 +1,12 @@
-name: Any condition can match
-hosts: localhost
-condition:
-  any:
-    - event.target_os == "linux"
-    - event.target_os == "windows"
-action:
-  debug:
-    msg: 'the target os is linux or windows'
+---
+- name: Simple Rulebook
+  hosts: localhost
+  sources:
+    - ansible.eda.range:
+        limit: 1
+  rules:
+    - name: Print a message when event occurs
+      condition: event.i == 0
+      action:
+        run_playbook:
+          name: print_message.yml
