@@ -16,5 +16,5 @@
     - name: Print a message when event occurs
       condition: event.payload.message == "Ansible super"
       action:
-        run_playbook:
-          name: sample-play.yml
+        debug:
+          msg: 'hey there from ansible EDA'
